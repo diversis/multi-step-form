@@ -44,7 +44,7 @@ module.exports = {
 				'card-light': '0 0 5px 5px hsla(200, 15%, 8%, 0.362)',
 				'card-dark': '0 0 5px 5px hsla(0, 0%, 100%, 0.362)',
 				around: '0 0 5px 2px hsla(0, 0%, 0%,  0)',
-				'around-lg': '0 0 5px 5px hsla(0, 0%, 0%,  0)'
+				'around-lg': '0 0 15px 9px hsla(0, 0%, 0%,  0)'
 			}
 		}
 	},
