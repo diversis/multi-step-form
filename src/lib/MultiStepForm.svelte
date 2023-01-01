@@ -1,4 +1,5 @@
 <script lang="ts">
+	const steps: string[] = ['Your info', 'Select plan', 'Add-ons', 'Summary'];
 </script>
 
 <div
@@ -8,27 +9,31 @@
 	<div class="relative rounded-lg p-4">
 		<div class="relative rounded-lg w-full h-full  bg-purplish-blue overflow-hidden">
 			<div
-				id="bg-waves"
-				class="absolute rounded-lg w-[200rem] h-full bg-[url('/waves-2.svg')] bg-transparent"
+				id="bg-waves-2"
+				class="absolute rounded-lg w-[200rem] h-full bg-[url('/aniwave-2.svg')] bg-transparent"
 			/>
-			<article
-				class="relative rounded-lg  w-full h-full bg-[url('/polygon.svg')] bg-transparent bg-bottom"
-			>
+			<div
+				id="bg-waves"
+				class="absolute rounded-lg w-[200rem] h-full bg-[url('/aniwave.svg')] bg-transparent"
+			/>
+			<div id="bg-polygon" class="absolute rounded-lg w-full h-full" />
+			<article class="relative rounded-lg  w-full h-full bg-transparent">
 				<ul
-					class="flex flex-col justify-start pt-8 text-xl text-left w-[14ch] mx-auto gap-8 uppercase "
+					id="steps"
+					class="flex flex-col justify-start pt-8 text-xl text-left w-[18ch] px-[2em] my-[2em] gap-8 uppercase "
 				>
-					<li id="step-1" class="flex flex-col font-extralight text-cool-gray">
-						Step 1<span class="font-bold text-white tracking-wider">Your info</span>
-					</li>
-					<li id="step-2" class="flex flex-col font-extralight text-cool-gray">
-						Step 2<span class="font-bold text-white tracking-wider">Select plan</span>
-					</li>
-					<li id="step-3" class="flex flex-col font-extralight text-cool-gray">
-						Step 3<span class="font-bold text-white tracking-wider">Add-ons</span>
-					</li>
-					<l id="step-4" class="flex flex-col font-extralight text-cool-gray">
-						Step 4<span class="font-bold text-white tracking-wider">Summary</span>
-					</l>
+					{#each steps as step, id}
+						<li id="step-{id + 1}" class="grid grid-cols-2 items-center gap-0">
+							<button
+								type="button"
+								class="bg-transparent border-2 border-white text-white font-bold rounded-full w-[2em] h-[2em]"
+								>{id + 1}</button
+							>
+							<span class="flex flex-col  font-extralight text-cool-gray  w-[14ch] "
+								>Step {id + 1}<b class="font-bold text-white tracking-wider">{step}</b></span
+							>
+						</li>
+					{/each}
 				</ul>
 			</article>
 		</div>
@@ -41,28 +46,25 @@
 </div>
 
 <style>
-	#bg-waves {
-		outline: 1px solid green;
-		background-repeat: repeat-x;
-		background-position: bottom;
-		background-size: auto;
-		animation-name: waves;
-		animation-duration: 10s;
-		animation-iteration-count: infinite;
-		animation-timing-function: linear;
-	}
-	@keyframes waves {
-		0% {
-			transform: translateX(0);
-		}
-		100% {
-			transform: translateX(calc(24.375rem - 100%));
+	@supports (-webkit-mask-image: url('/polygon.svg')) or (mask-image: url('/polygon.svg')) {
+		#bg-polygon {
+			background-color: rgb(133, 243, 250);
+			background: linear-gradient(
+				144deg,
+				rgba(133, 243, 250, 0.6194852941176471) 0%,
+				rgba(250, 255, 170, 0.8127626050420168) 35%,
+				rgba(130, 57, 226, 0.5158438375350141) 100%
+			);
+			-webkit-mask-image: url('/polygon.svg');
+			mask-image: url('/polygon.svg');
 		}
 	}
-	/* #form > * {
-		outline: 1px solid red;
+	#steps > *::before {
+		background: white;
+		/* position: absolute; */
+		border-radius: 50%;
+		width: 2em;
+		height: 2em;
+		aspect-ratio: 1/1;
 	}
-	div > * {
-		outline: 1px solid green;
-	} */
 </style>

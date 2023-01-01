@@ -1,0 +1,20 @@
+<svg id="eUGAhVgSXR91" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style><![CDATA[
+#eUGAhVgSXR93_to {animation: eUGAhVgSXR93_to__to 36000ms linear infinite normal forwards}@keyframes eUGAhVgSXR93_to__to { 0% {transform: translate(1332.066381px,772.39614px)} 100% {transform: translate(-587.933619px,772.39614px)}} #eUGAhVgSXR94_to {animation: eUGAhVgSXR94_to__to 36000ms linear infinite normal forwards}@keyframes eUGAhVgSXR94_to__to { 0% {transform: translate(3252.066381px,772.39614px)} 100% {transform: translate(1332.066381px,772.39614px)}}
+]]></style>
+    <g transform="translate(-360 0)">
+        <g id="eUGAhVgSXR93_to" transform="translate(1332.066381,772.39614)">
+            <path
+                d="M-12.066381,1084.625978h1920v-446.62598c-160.9933-239.310477-248.639617-14.972458-340.933619,77-261.745834,254.267381-246.950709-154.876467-296.585522-111.914997-256.760199,124.640873-708.854259,310.492648-737.873969-63.085003-54.986858-149.105707-194.978876,58.594414-291.659643,187.725876-89.091471,131.946893-225.962673,133.152441-252.947247-89.725876v446.62598Z"
+                transform="translate(-960,-772.396138)" fill="hsla(218, 83%, 67%, 0.9)"
+                stroke-width="3.84" />
+        </g>
+        <g id="eUGAhVgSXR94_to" transform="translate(3252.066381,772.39614)">
+            <path
+                d="M-12.066381,1084.625978h1932.066381v-446.62598c-160.9933-239.310477-260.705998-14.972458-353,77-261.745834,254.267381-246.950709-154.876467-296.585522-111.914997-256.760199,124.640873-708.854259,310.492648-737.873969-63.085003-54.986858-149.105707-194.978876,58.594414-291.659643,187.725876-89.091471,131.946893-146.454569,100.834125-252.947247-89.725876v446.62598Z"
+                transform="translate(-960,-772.396138)" fill="hsla(218, 83%, 67%, 0.9)"
+                stroke-width="3.84" />
+        </g>
+    </g>
+</svg>

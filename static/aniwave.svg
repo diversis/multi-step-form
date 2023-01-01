@@ -1,0 +1,34 @@
+<svg id="esjF3VNta1d1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+    <style><![CDATA[
+#esjF3VNta1d3_to {animation: esjF3VNta1d3_to__to 24000ms linear infinite normal forwards}@keyframes esjF3VNta1d3_to__to { 0% {transform: translate(2880px,772.39614px)} 100% {transform: translate(960px,772.39614px)}} #esjF3VNta1d4_to {animation: esjF3VNta1d4_to__to 24000ms linear infinite normal forwards}@keyframes esjF3VNta1d4_to__to { 0% {transform: translate(4800px,772.39614px)} 100% {transform: translate(2880px,772.39614px)}} #esjF3VNta1d6_to {animation: esjF3VNta1d6_to__to 12000ms linear infinite normal forwards}@keyframes esjF3VNta1d6_to__to { 0% {transform: translate(960px,771.612633px)} 100% {transform: translate(-960px,771.612633px)}} #esjF3VNta1d7_to {animation: esjF3VNta1d7_to__to 12000ms linear infinite normal forwards}@keyframes esjF3VNta1d7_to__to { 0% {transform: translate(2880px,771.612633px)} 100% {transform: translate(960px,771.612633px)}}
+]]></style>
+    <g transform="translate(-1920 0.000001)">
+        <g id="esjF3VNta1d3_to" transform="translate(2880,772.39614)">
+            <path
+                d="M0,1079.999997h1920v-268.999999c-206.901747,249.169119-259.214496,232.014474-336.200248,85-84.740791-168.26703-29.568774-321.33246-136.80994-320-263.770407,37.85147-521.960378,589.229884-720.998374,235-194.437178-422.03852-271.386889-26.784275-363.495026,100C273.528537,1042.946891,110.604564,658.853231,0,810.999998v268.999999Z"
+                transform="translate(-960,-772.396138)" fill="hsla(163, 100%, 50%, 0.9)"
+                stroke-width="3.84" />
+        </g>
+        <g id="esjF3VNta1d4_to" transform="translate(4800,772.39614)">
+            <path
+                d="M0,1079.999997h1920v-268.999999c-206.901747,249.169119-259.214496,232.014474-336.200248,85-84.740791-168.26703-29.568774-321.33246-136.80994-320-263.770407,37.85147-521.960378,589.229884-720.998374,235-194.437178-422.03852-271.386889-26.784275-363.495026,100C273.528537,1042.946891,110.604564,658.853231,0,810.999998v268.999999Z"
+                transform="translate(-960,-772.396138)" fill="hsla(163, 100%, 50%, 0.9)"
+                stroke-width="3.84" />
+        </g>
+    </g>
+    <g>
+        <g id="esjF3VNta1d6_to" transform="translate(960,771.612633)">
+            <path
+                d="M0,1080.387367h1920v-140.387369c-98.590987,37.726969-355.909913,39.014474-432.922393-108-84.770213-168.26703-259.477531,18.543463-343.399158,63.992906-256.493018,124.640873-375.180052-333.725417-548.298636.007094-184.79437,431.17461-264.412219-234.104515-371.216465-126.3491C148.325393,832.431565,127.671022,895.884055,0,939.999998v140.387369Z"
+                transform="scale(-1,1) translate(-960,-772)" fill="hsla(57, 81%, 73%, 0.9)"
+                stroke-width="3.84" />
+        </g>
+        <g id="esjF3VNta1d7_to" transform="translate(2880,771.612633)">
+            <path
+                d="M0,1080.387367h1920v-140.387369c-98.590987,37.726969-355.909913,39.014474-432.922393-108-84.770213-168.26703-259.477531,18.543463-343.399158,63.992906-256.493018,124.640873-375.180052-333.725417-548.298636.007094-184.79437,431.17461-264.412219-234.104515-371.216465-126.3491C148.325393,832.431565,127.671022,895.884055,0,939.999998v140.387369Z"
+                transform="scale(-1,1) translate(-960,-772)" fill="hsla(57, 81%, 73%, 0.9)"
+                stroke-width="3.84" />
+        </g>
+    </g>
+</svg>
