@@ -1,1 +1,97 @@
-<svg id="visual" viewBox="0 0 540 960" width="540" height="960" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><g><g transform="translate(346 166)"><path d="M0 -36.6L31.7 -18.3L31.7 18.3L0 36.6L-31.7 18.3L-31.7 -18.3Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(479 938)"><path d="M0 -25L21.7 -12.5L21.7 12.5L0 25L-21.7 12.5L-21.7 -12.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(319 365)"><path d="M0 -31L26.8 -15.5L26.8 15.5L0 31L-26.8 15.5L-26.8 -15.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(143 652)"><path d="M0 -16L13.9 -8L13.9 8L0 16L-13.9 8L-13.9 -8Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(506 690)"><path d="M0 -14L12.1 -7L12.1 7L0 14L-12.1 7L-12.1 -7Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(443 745)"><path d="M0 -20L17.3 -10L17.3 10L0 20L-17.3 10L-17.3 -10Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(28 333)"><path d="M0 -4L3.5 -2L3.5 2L0 4L-3.5 2L-3.5 -2Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(537 330)"><path d="M0 -13L11.3 -6.5L11.3 6.5L0 13L-11.3 6.5L-11.3 -6.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(467 30)"><path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(420 415)"><path d="M0 -13L11.3 -6.5L11.3 6.5L0 13L-11.3 6.5L-11.3 -6.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(17 897)"><path d="M0 -17L14.7 -8.5L14.7 8.5L0 17L-14.7 8.5L-14.7 -8.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(141 929)"><path d="M0 -17L14.7 -8.5L14.7 8.5L0 17L-14.7 8.5L-14.7 -8.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(172 781)"><path d="M0 -12L10.4 -6L10.4 6L0 12L-10.4 6L-10.4 -6Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(439 529)"><path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(201 367)"><path d="M0 -12L10.4 -6L10.4 6L0 12L-10.4 6L-10.4 -6Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(234 956)"><path d="M0 -5L4.3 -2.5L4.3 2.5L0 5L-4.3 2.5L-4.3 -2.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(453 270)"><path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(313 467)"><path d="M0 -15L13 -7.5L13 7.5L0 15L-13 7.5L-13 -7.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(105 832)"><path d="M0 -26L22.5 -13L22.5 13L0 26L-22.5 13L-22.5 -13Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(50 32)"><path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(317 755)"><path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(101 505)"><path d="M0 -8L6.9 -4L6.9 4L0 8L-6.9 4L-6.9 -4Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g><g transform="translate(328 542)"><path d="M0 -35L30.3 -17.5L30.3 17.5L0 35L-30.3 17.5L-30.3 -17.5Z" fill="none" stroke="#ffffff" stroke-width="2"></path></g></g></svg>
+<svg id="visual" viewBox="0 0 540 960" width="540" height="960" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <g>
+        <g transform="translate(346 166)">
+            <path d="M0 -36.6L31.7 -18.3L31.7 18.3L0 36.6L-31.7 18.3L-31.7 -18.3Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(479 938)">
+            <path d="M0 -25L21.7 -12.5L21.7 12.5L0 25L-21.7 12.5L-21.7 -12.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(319 365)">
+            <path d="M0 -31L26.8 -15.5L26.8 15.5L0 31L-26.8 15.5L-26.8 -15.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(143 652)">
+            <path d="M0 -16L13.9 -8L13.9 8L0 16L-13.9 8L-13.9 -8Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(506 690)">
+            <path d="M0 -14L12.1 -7L12.1 7L0 14L-12.1 7L-12.1 -7Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(443 745)">
+            <path d="M0 -20L17.3 -10L17.3 10L0 20L-17.3 10L-17.3 -10Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(28 333)">
+            <path d="M0 -4L3.5 -2L3.5 2L0 4L-3.5 2L-3.5 -2Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(537 330)">
+            <path d="M0 -13L11.3 -6.5L11.3 6.5L0 13L-11.3 6.5L-11.3 -6.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(467 30)">
+            <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(420 415)">
+            <path d="M0 -13L11.3 -6.5L11.3 6.5L0 13L-11.3 6.5L-11.3 -6.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(17 897)">
+            <path d="M0 -17L14.7 -8.5L14.7 8.5L0 17L-14.7 8.5L-14.7 -8.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(141 929)">
+            <path d="M0 -17L14.7 -8.5L14.7 8.5L0 17L-14.7 8.5L-14.7 -8.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+        <g transform="translate(172 781)">
+            <path d="M0 -12L10.4 -6L10.4 6L0 12L-10.4 6L-10.4 -6Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(439 529)">
+            <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(201 367)">
+            <path d="M0 -12L10.4 -6L10.4 6L0 12L-10.4 6L-10.4 -6Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(234 956)">
+            <path d="M0 -5L4.3 -2.5L4.3 2.5L0 5L-4.3 2.5L-4.3 -2.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(453 270)">
+            <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(313 467)">
+            <path d="M0 -15L13 -7.5L13 7.5L0 15L-13 7.5L-13 -7.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(105 832)">
+            <path d="M0 -26L22.5 -13L22.5 13L0 26L-22.5 13L-22.5 -13Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(50 32)">
+            <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(317 755)">
+            <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(101 505)">
+            <path d="M0 -8L6.9 -4L6.9 4L0 8L-6.9 4L-6.9 -4Z" fill="none" stroke="#ffffff"
+                stroke-width="2"></path>
+        </g>
+        <g transform="translate(328 542)">
+            <path d="M0 -35L30.3 -17.5L30.3 17.5L0 35L-30.3 17.5L-30.3 -17.5Z" fill="none"
+                stroke="#ffffff" stroke-width="2"></path>
+        </g>
+    </g>
+</svg>
