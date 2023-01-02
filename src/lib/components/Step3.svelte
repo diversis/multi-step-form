@@ -1,0 +1,6 @@
+<h1 id="Step-1 Title">Pick add-ons</h1>
+<h5 id="Step-1 Description">Add-ons help enhance your gaming experience.</h5>
+<article>
+	Online service Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save +$2/mo
+	Customizable Profile Custom theme on your profile +$2/mo Go Back Next Step
+</article>

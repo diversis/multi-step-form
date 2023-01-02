@@ -45,6 +45,23 @@ module.exports = {
 				'card-dark': '0 0 5px 5px hsla(0, 0%, 100%, 0.362)',
 				around: '0 0 5px 2px hsla(0, 0%, 0%,  0)',
 				'around-lg': '0 0 15px 9px hsla(0, 0%, 0%,  0)'
+			},
+			transitionTimingFunction: {
+				theme: 'cubic-bezier(0.005, 0.05, 0.95, 0.005)',
+				button: 'cubic-bezier(0.23, 0.13, 0.42, 0.23)'
+			},
+			fontSize: {
+				'4xl': ['2.441rem', '3.1773rem'],
+				'5xl': ['3.052rem', '3.9676rem']
+			},
+			height: {
+				'bg-anim': 'calc(100% - 2rem)'
+			},
+			width: {
+				'bg-anim': 'calc(100% - 2rem)'
+			},
+			gridTemplateRows: {
+				'form-mobile': '8rem minmax(0,1fr)'
 			}
 		}
 	},

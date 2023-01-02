@@ -17,7 +17,7 @@
         </g>
         <g transform="translate(506 690)">
             <path d="M0 -14L12.1 -7L12.1 7L0 14L-12.1 7L-12.1 -7Z" fill="none" stroke="#ffffff"
-                stroke-width="10"></path>
+                stroke-width="4"></path>
         </g>
         <g transform="translate(443 745)">
             <path d="M0 -20L17.3 -10L17.3 10L0 20L-17.3 10L-17.3 -10Z" fill="none" stroke="#ffffff"
@@ -25,7 +25,8 @@
         </g>
         <g transform="translate(28 333)">
             <path d="M0 -4L3.5 -2L3.5 2L0 4L-3.5 2L-3.5 -2Z" fill="none" stroke="#ffffff"
-                stroke-width="1"></path>//2l </g>
+                stroke-width="4"></path>
+        </g>
         <g transform="translate(537 330)">
             <path d="M0 -13L11.3 -6.5L11.3 6.5L0 13L-11.3 6.5L-11.3 -6.5Z" fill="none"
                 stroke="#ffffff" stroke-width="4"></path>
@@ -56,7 +57,8 @@
         </g>
         <g transform="translate(201 367)">
             <path d="M0 -12L10.4 -6L10.4 6L0 12L-10.4 6L-10.4 -6Z" fill="none" stroke="#ffffff"
-                stroke-width="2"></path>//1m </g>
+                stroke-width="4"></path>
+        </g>
         <g transform="translate(234 956)">
             <path d="M0 -5L4.3 -2.5L4.3 2.5L0 5L-4.3 2.5L-4.3 -2.5Z" fill="none" stroke="#ffffff"
                 stroke-width="4"></path>
@@ -67,14 +69,16 @@
         </g>
         <g transform="translate(313 467)">
             <path d="M0 -15L13 -7.5L13 7.5L0 15L-13 7.5L-13 -7.5Z" fill="none" stroke="#ffffff"
-                stroke-width="3"></path>//3r </g>
+                stroke-width="4"></path>
+        </g>
         <g transform="translate(105 832)">
             <path d="M0 -26L22.5 -13L22.5 13L0 26L-22.5 13L-22.5 -13Z" fill="none" stroke="#ffffff"
                 stroke-width="4"></path>
         </g>
         <g transform="translate(50 32)">
             <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
-                stroke-width="2"></path>//1l </g>
+                stroke-width="4"></path>
+        </g>
         <g transform="translate(317 755)">
             <path d="M0 -9L7.8 -4.5L7.8 4.5L0 9L-7.8 4.5L-7.8 -4.5Z" fill="none" stroke="#ffffff"
                 stroke-width="4"></path>
