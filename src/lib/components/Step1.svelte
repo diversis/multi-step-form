@@ -23,4 +23,3 @@
 		{/each}
 	</form>
 </article>
-Next Step

@@ -61,7 +61,7 @@ module.exports = {
 				'bg-anim': 'calc(100% - 2rem)'
 			},
 			gridTemplateRows: {
-				'form-mobile': '8rem minmax(0,1fr)'
+				'form-mobile': '8rem 1fr'
 			}
 		}
 	},
