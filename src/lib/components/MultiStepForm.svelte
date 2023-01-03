@@ -1,5 +1,14 @@
 <script lang="ts">
-	import { currentStep } from '$lib/multiform-store';
+	import {
+		currentStep,
+		billingTermMonthly,
+		userName,
+		userPhone,
+		userEmail,
+		paymentPlan,
+		addons,
+		canContinue
+	} from '$lib/multiform-store';
 	import FormNav from './formNav.svelte';
 	import Step1 from './Step1.svelte';
 	import Step2 from './Step2.svelte';
@@ -7,20 +16,30 @@
 	import Step4 from './Step4.svelte';
 	import ThankYou from './ThankYou.svelte';
 	import StepsNav from './stepsNav.svelte';
-	export const steps = [
+
+	const steps = [
 		{ name: 'Your info', component: Step1 },
 		{ name: 'Select plan', component: Step2 },
 		{ name: 'Add-ons', component: Step3 },
 		{ name: 'Summary', component: Step4 },
 		{ name: 'Thank You', component: ThankYou }
 	];
+
 	let stepId = 0;
+
+	function handleConfirmForm() {}
+
+	function handleNextStep() {
+		if ($canContinue) {
+			$currentStep += 1;
+		}
+	}
 </script>
 
 <div
 	id="form"
-	class="xl:rounded-xl xl:mx-auto xl:container grid grid-cols-1 grid-rows-form-mobile gap-y-0 xl:grid-rows-1 
-	xl:grid-cols-3 xl:h-[80%] min-h-screen xl:min-h-fit w-screen shadow-2xl shadow-light-blue "
+	class=" xl:rounded-xl xl:mx-auto xl:container grid grid-cols-1 grid-rows-form-mobile gap-y-0 xl:grid-rows-1 
+	xl:grid-cols-3 xl:h-[80%] xl:min-h-fit w-screen shadow-2xl shadow-light-blue "
 >
 	<div id="col-1" class="relative xl:rounded-xl xl:p-4 h-full xl:h-full xl:overflow-hidden">
 		<div
@@ -51,10 +70,10 @@
 	</div>
 	<div
 		id="col-2"
-		class="rounded-xl col-span-2 px-3 mx-auto w-bg-anim xl:w-4/5 pt-6 xl:pt-20 pb-12 flex flex-col justify-between h-full bg-white"
+		class="min-h-fit rounded-xl col-span-2 px-6 mx-auto w-bg-anim xl:w-4/5 pt-8 xl:pt-20 pb-12 flex flex-col justify-between h-full bg-white"
 	>
 		<svelte:component this={steps[$currentStep].component} />
-		<FormNav />
+		<FormNav on:confirm-form={handleConfirmForm} on:nextStep={handleNextStep} />
 	</div>
 </div>
 
@@ -92,5 +111,9 @@
 		100% {
 			background-position: 50% 0%;
 		}
+	}
+
+	#form {
+		min-height: max(80vh, 40rem);
 	}
 </style>

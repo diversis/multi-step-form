@@ -50,11 +50,16 @@
 				</svg>
 			</div>
 		</div>
-		<h1 id="Step-1 Title" class="text-marine-blue font-bold text-4xl text-center">Thank you!</h1>
+		<h1 id="Step-1 Title" class="text-marine-blue font-bold text-2xl xl:text-4xl text-center">
+			Thank you!
+		</h1>
 
-		<h5 id="Step-1 Description" class="text-cool-gray text-xl text-center max-w-[40ch] mx-auto">
+		<h2
+			id="Step-1 Description"
+			class="text-cool-gray text-lg xl:text-xl text-center max-w-[40ch] mx-auto"
+		>
 			Thanks for confirming your subscription! We hope you have fun using our platform. If you ever
 			need support, please feel free to email us at support@loremgaming.com.
-		</h5>
+		</h2>
 	</div>
 </article>
