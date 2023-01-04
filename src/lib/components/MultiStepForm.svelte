@@ -33,6 +33,7 @@
 		if ($canContinue) {
 			$currentStep += 1;
 		}
+		console.log('step: ', $currentStep);
 	}
 </script>
 
@@ -72,8 +73,12 @@
 		id="col-2"
 		class="min-h-fit rounded-xl col-span-2 px-6 mx-auto w-bg-anim xl:w-4/5 pt-8 xl:pt-20 pb-12 flex flex-col justify-between h-full bg-white"
 	>
-		<svelte:component this={steps[$currentStep].component} />
-		<FormNav on:confirm-form={handleConfirmForm} on:nextStep={handleNextStep} />
+		<svelte:component this={steps[$currentStep].component}
+			><FormNav
+				on:confirm-form={handleConfirmForm}
+				on:nextStep={handleNextStep}
+			/></svelte:component
+		>
 	</div>
 </div>
 
@@ -114,6 +119,12 @@
 	}
 
 	#form {
-		min-height: max(80vh, 40rem);
+		min-height: max(100vh, 40rem);
+	}
+
+	@media screen and (min-width: 1280px) {
+		#form {
+			min-height: max(80vh, 40rem);
+		}
 	}
 </style>

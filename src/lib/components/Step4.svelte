@@ -5,3 +5,4 @@
 	</h2>
 	Total (per month/year)
 </article>
+<slot />

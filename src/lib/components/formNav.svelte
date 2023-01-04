@@ -1,5 +1,5 @@
 <script>
-	import { currentStep } from '$lib/multiform-store';
+	import { currentStep, canContinue } from '$lib/multiform-store';
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
@@ -32,7 +32,9 @@
 			<button
 				type="button"
 				on:click|preventDefault={() => {
-					dispatch('nextStep');
+					if ($canContinue) {
+						dispatch('nextStep');
+					}
 				}}
 				class="rounded-lg bg-marine-blue w-[14ch] py-3 text-alabaster font-bold
          hover:text-magnolia focus:text-magnolia hover:bg-purplish-blue focus:bg-purplish-blue"
@@ -42,7 +44,9 @@
 			<button
 				type="submit"
 				on:click|preventDefault={() => {
-					dispatch('confirm-form');
+					if ($canContinue) {
+						dispatch('confirm-form');
+					}
 				}}
 				class="rounded-lg bg-purplish-blue w-[14ch] py-3 text-alabaster font-bold
          hover:text-magnolia focus:text-magnolia hover:bg-opacity-60 focus:bg-opacity-60"
