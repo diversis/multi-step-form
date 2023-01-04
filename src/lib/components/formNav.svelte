@@ -3,14 +3,6 @@
 	import { createEventDispatcher } from 'svelte';
 
 	const dispatch = createEventDispatcher();
-
-	// function nextStep() {
-	// 	dispatch('nextStep');
-	// }
-
-	// function handleConfirm() {
-	// 	$currentStep += 1;
-	// }
 </script>
 
 <div class="flex flex-row justify-between">
@@ -30,12 +22,8 @@
 	<div>
 		{#if $currentStep < 3}
 			<button
-				type="button"
-				on:click|preventDefault={() => {
-					if ($canContinue) {
-						dispatch('nextStep');
-					}
-				}}
+				type="submit"
+				form="multi"
 				class="rounded-lg bg-marine-blue w-[14ch] py-3 text-alabaster font-bold
          hover:text-magnolia focus:text-magnolia hover:bg-purplish-blue focus:bg-purplish-blue"
 				>Next Step</button
@@ -55,3 +43,9 @@
 		{/if}
 	</div>
 </div>
+<!-- on:click|preventDefault={() => {
+					
+	if ($canContinue) {
+		dispatch('nextStep');
+	}
+}} -->

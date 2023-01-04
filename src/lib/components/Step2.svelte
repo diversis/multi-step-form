@@ -1,6 +1,13 @@
 <script lang="ts">
-	import { billingTermMonthly, canContinue, paymentPlan } from '$lib/multiform-store';
+	import {
+		billingTermMonthly,
+		canContinue,
+		complitedSteps,
+		currentStep,
+		paymentPlan
+	} from '$lib/multiform-store';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import Switch from './Switch.svelte';
 
 	const paymentPlansMonthly = [
@@ -19,9 +26,14 @@
 	onMount(() => {
 		$canContinue = true;
 	});
+
+	function handleSubmit() {
+		$complitedSteps = 2;
+		$currentStep += 1;
+	}
 </script>
 
-<article class="flex flex-col gap-y-12">
+<article in:fade={{ delay: 0, duration: 250 }} class="flex flex-col gap-y-12">
 	<div>
 		<h1 id="Step-1 Title" class="text-marine-blue font-bold text-2xl xl:text-4xl">
 			Select your plan
@@ -30,7 +42,11 @@
 			You have the option of monthly or yearly billing.
 		</h2>
 	</div>
-	<div id="select-plan" class="flex flex-col gap-y-6 xl:grid xl:grid-cols-3 xl:gap-x-8 ">
+	<form
+		id="multi"
+		on:submit|preventDefault={handleSubmit}
+		class="flex flex-col gap-y-6 xl:grid xl:grid-cols-3 xl:gap-x-8 "
+	>
 		{#if $billingTermMonthly}
 			{#each paymentPlansMonthly as plan, id}
 				<label
@@ -111,7 +127,7 @@
 				>
 			{/each}
 		{/if}
-	</div>
+	</form>
 	<div class="mx-auto flex flex-row gap-x-8">
 		<span class={$billingTermMonthly ? 'text-marine-blue' : 'text-cool-gray'}>Monthly</span><Switch
 			checked={!$billingTermMonthly}
@@ -120,7 +136,7 @@
 		<span class={$billingTermMonthly ? 'text-cool-gray' : 'text-marine-blue'}>Yearly</span>
 	</div>
 </article>
-
+<slot />
 <!-- Icons -->
 <defs class="hidden">
 	<svg id="pro" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -150,4 +166,3 @@
 		</g>
 	</svg>
 </defs>
-<slot />

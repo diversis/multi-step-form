@@ -1,5 +1,5 @@
 <script>
-	import { currentStep } from '$lib/multiform-store';
+	import { complitedSteps, currentStep } from '$lib/multiform-store';
 	export let steps;
 </script>
 
@@ -15,7 +15,9 @@
 					<button
 						type="button"
 						on:click|preventDefault={() => {
-							$currentStep = id;
+							if (id < $complitedSteps + 1) {
+								$currentStep = id;
+							}
 						}}
 						class="{$currentStep === id
 							? 'bg-light-blue'
