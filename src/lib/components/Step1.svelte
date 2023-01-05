@@ -39,53 +39,47 @@
 		nameValid = validateUserName($inputName);
 		emailValid = validateEmail($inputEmail);
 		phoneValid = validatePhoneNumber($inputPhone);
-
-		if (nameValid && emailValid && phoneValid) {
-			$canContinue = true;
-		} else {
-			$canContinue = false;
-		}
-		console.log('can continue: ', $canContinue);
 	});
 
 	afterUpdate(() => {
-		nameValid = validateUserName($inputName);
-		emailValid = validateEmail($inputEmail);
-		phoneValid = validatePhoneNumber($inputPhone);
 		if (nameValid && emailValid && phoneValid) {
 			$canContinue = true;
 		} else {
 			$complitedSteps = 0;
 			$canContinue = false;
 		}
-		console.log('can continue?: ', $canContinue);
 	});
 
-	async function handleSubmit() {
-		console.log(
-			`submit??? \n---------------\n name: ${$inputName.trim()} \n---------------\n email: ${$inputEmail.trim()} \n---------------\n phone: ${$inputPhone.trim()} `
-		);
+	function handleInputName(e) {
 		if (validateUserName($inputName.trim())) {
 			userName.set($inputName.trim());
 			fields[0].error = ``;
 			nameValid = true;
+			e.target.placeholder = '';
 		} else {
 			userName.set('');
 			fields[0].error = `Please, provide valid name (3-29 symbols, '-', '_' and whitespace allowed)`;
 			nameValid = false;
 			$canContinue = false;
 		}
+	}
 
+	function handleInputEmail(e) {
+		console.log('target: ', e.target);
 		if (validateEmail($inputEmail.trim())) {
 			userEmail.set($inputEmail.trim());
 			fields[1].error = ``;
 			emailValid = true;
+			e.target.placeholder = '';
 		} else {
 			userEmail.set('');
 			fields[1].error = `Please, provide valid email`;
 			emailValid = false;
 			$canContinue = false;
 		}
+	}
+
+	function handleInputPhone() {
 		if (validatePhoneNumber($inputPhone)) {
 			userPhone.set($inputPhone);
 			fields[2].error = ``;
@@ -96,6 +90,12 @@
 			phoneValid = false;
 			$canContinue = false;
 		}
+	}
+
+	async function handleSubmit() {
+		console.log(
+			`submit??? \n---------------\n name: ${$inputName.trim()} \n---------------\n email: ${$inputEmail.trim()} \n---------------\n phone: ${$inputPhone.trim()} `
+		);
 		await tick();
 		if ($canContinue) {
 			$complitedSteps = 1;
@@ -123,6 +123,7 @@
 				type="text"
 				required
 				bind:value={$inputName}
+				on:input={handleInputName}
 				class="{nameValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'}
@@ -145,6 +146,7 @@
 				type="email"
 				required
 				bind:value={$inputEmail}
+				on:input={handleInputEmail}
 				class="{emailValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'} rounded-md border-cool-gray border px-4 py-2"
@@ -154,11 +156,6 @@
 					class="absolute h-12 aspect-square right-0 top-7 xl:top-9
 			stroke-green-600 inline-block"><CheckMark /></b
 				>
-				<!-- <svg
-					in:fade={{ delay: 0, duration: 250 }}
-					class="absolute h-12 aspect-square right-0 top-9
-			 stroke-green-600 inline-block"><use href="#check" /></svg
-				> -->
 			{/if}
 			<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem]">{fields[1].error}</h5>
 		</label>
@@ -172,17 +169,13 @@
 				pattern="\d&lcub;6,15&rcub;"
 				required
 				bind:value={$inputPhone}
+				on:input={handleInputPhone}
 				class="{phoneValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'}
 					rounded-md  border  px-4 py-2"
 			/>
 			{#if phoneValid}
-				<!-- <svg
-					in:fade={{ delay: 0, duration: 250 }}
-					class="absolute h-12 aspect-square right-0 top-9
-			 stroke-green-600 inline-block"><use href="#check" /></svg
-				> -->
 				<b
 					class="absolute h-12 aspect-square right-0 top-7 xl:top-9
 				stroke-green-600 inline-block"><CheckMark /></b
@@ -192,19 +185,3 @@
 	</form>
 </article>
 <slot />
-
-<!-- Icons
-<defs class="hidden">
-	<svg id="check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="mx-auto">
-		<g>
-			<path
-				in:draw={{ duration: 10000 }}
-				fill="none"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="32"
-				d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"
-			/>
-		</g>
-	</svg>
-</defs> -->

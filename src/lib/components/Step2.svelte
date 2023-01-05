@@ -42,91 +42,89 @@
 			You have the option of monthly or yearly billing.
 		</h2>
 	</div>
-	<form
-		id="multi"
-		on:submit|preventDefault={handleSubmit}
-		class="flex flex-col gap-y-6 xl:grid xl:grid-cols-3 xl:gap-x-8 "
-	>
-		{#if $billingTermMonthly}
-			{#each paymentPlansMonthly as plan, id}
-				<label
-					id="plan-{id}"
-					title="choose {plan.name} plan"
-					class="relative rounded-md w-full xl:h-60
+	<form id="multi" on:submit|preventDefault={handleSubmit}>
+		<div class="flex flex-col gap-y-6 xl:grid xl:grid-cols-3 xl:gap-x-8 ">
+			{#if $billingTermMonthly}
+				{#each paymentPlansMonthly as plan, id}
+					<label
+						id="plan-{id}"
+						title="choose {plan.name} plan"
+						class="relative rounded-md w-full xl:h-60
 					 border-2 border-solid {$paymentPlan === id
-						? 'border-marine-blue'
-						: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
-				>
-					<input
-						type="radio"
-						bind:group={$paymentPlan}
-						name="payment plan"
-						value={id}
-						class="absolute w-0 h-0 border-none bg-transparent opacity-0"
-					/>
-					<div
-						class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
+							? 'border-marine-blue'
+							: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
 					>
+						<input
+							type="radio"
+							bind:group={$paymentPlan}
+							name="payment plan"
+							value={id}
+							class="absolute w-0 h-0 border-none bg-transparent opacity-0"
+						/>
 						<div
-							class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
+							class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
+						>
+							<div
+								class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
 							{id === 0 ? 'bg-amber-400' : id === 1 ? 'bg-strawberry-red bg-opacity-70' : 'bg-purplish-blue'}"
-						>
-							<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
-								><use href="#{plan.name.toLowerCase()}" /></svg
 							>
-						</div>
-						<div class="flex flex-col text-left">
-							<h3 class="font-bold text-xl text-marine-blue">
-								{plan.name}
-							</h3>
-							<h4 class="text-cool-gray">
-								${plan.price}/mo
-							</h4>
-						</div>
-					</div></label
-				>
-			{/each}
-		{:else}
-			{#each paymentPlansYearly as plan, id}
-				<label
-					id="plan-{id}"
-					title="choose {plan.name} plan"
-					class="relative rounded-md w-full xl:h-60
-			 border-2 border-solid {$paymentPlan === id
-						? 'border-marine-blue'
-						: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
-				>
-					<input
-						type="radio"
-						bind:group={$paymentPlan}
-						name="payment plan"
-						value={id}
-						class="absolute w-0 h-0"
-					/>
-					<div
-						class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
+								<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
+									><use href="#{plan.name.toLowerCase()}" /></svg
+								>
+							</div>
+							<div class="flex flex-col text-left">
+								<h3 class="font-bold text-xl text-marine-blue">
+									{plan.name}
+								</h3>
+								<h4 class="text-cool-gray">
+									${plan.price}/mo
+								</h4>
+							</div>
+						</div></label
 					>
+				{/each}
+			{:else}
+				{#each paymentPlansYearly as plan, id}
+					<label
+						id="plan-{id}"
+						title="choose {plan.name} plan"
+						class="relative rounded-md w-full xl:h-60
+			 border-2 border-solid {$paymentPlan === id
+							? 'border-marine-blue'
+							: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
+					>
+						<input
+							type="radio"
+							bind:group={$paymentPlan}
+							name="payment plan"
+							value={id}
+							class="absolute w-0 h-0"
+						/>
 						<div
-							class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
-					{id === 0 ? 'bg-amber-400' : id === 1 ? 'bg-strawberry-red bg-opacity-70' : 'bg-purplish-blue'}"
+							class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
 						>
-							<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
-								><use href="#{plan.name.toLowerCase()}" /></svg
+							<div
+								class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
+					{id === 0 ? 'bg-amber-400' : id === 1 ? 'bg-strawberry-red bg-opacity-70' : 'bg-purplish-blue'}"
 							>
-						</div>
-						<div class="flex flex-col text-left">
-							<h3 class="font-bold text-xl text-marine-blue">
-								{plan.name}
-							</h3>
-							<h4 class="text-cool-gray">
-								${plan.price}/mo
-							</h4>
-							<span class="text-marine-blue">2 month free</span>
-						</div>
-					</div></label
-				>
-			{/each}
-		{/if}
+								<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
+									><use href="#{plan.name.toLowerCase()}" /></svg
+								>
+							</div>
+							<div class="flex flex-col text-left">
+								<h3 class="font-bold text-xl text-marine-blue">
+									{plan.name}
+								</h3>
+								<h4 class="text-cool-gray">
+									${plan.price}/mo
+								</h4>
+								<span class="text-marine-blue">2 month free</span>
+							</div>
+						</div></label
+					>
+				{/each}
+			{/if}
+		</div>
 	</form>
 	<div class="mx-auto flex flex-row gap-x-8">
 		<span class={$billingTermMonthly ? 'text-marine-blue' : 'text-cool-gray'}>Monthly</span><Switch
