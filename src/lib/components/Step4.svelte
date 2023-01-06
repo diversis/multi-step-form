@@ -16,19 +16,19 @@
 	import { paymentPlans } from '$lib/scripts/paymentPlans';
 
 	$: sum = () => {
-		let suum = 0;
+		let summ = 0;
 		if ($billingTermMonthly) {
-			suum = paymentPlans[$paymentPlan].price.monthly;
+			summ = paymentPlans[$paymentPlan].price.monthly;
 			$selectedAddons.map((id) => {
-				suum += addons[id].price.monthly;
+				summ += addons[id].price.monthly;
 			});
-			return suum;
+			return summ;
 		}
-		suum = paymentPlans[$paymentPlan].price.yearly;
+		summ = paymentPlans[$paymentPlan].price.yearly;
 		$selectedAddons.map((id) => {
-			suum += addons[id].price.yearly;
+			summ += addons[id].price.yearly;
 		});
-		return suum;
+		return summ;
 	};
 
 	onMount(() => {
@@ -45,19 +45,24 @@
 					email: $clientEmail,
 					phone: $clientPhone
 				},
-				paymentPlan: paymentPlans[$paymentPlan],
+				paymentPlan: {
+					name: paymentPlans[$paymentPlan].name,
+					price: $billingTermMonthly
+						? paymentPlans[$paymentPlan].price.monthly
+						: paymentPlans[$paymentPlan].price.yearly
+				},
 				billingTerm: $billingTermMonthly ? 'monthly' : 'yearly',
 				addons: $selectedAddons.map((id) => ({
 					name: addons[id].name,
 					price: $billingTermMonthly ? addons[id].price.monthly : addons[id].price.yearly
 				})),
-				sum
+				total: sum()
 			})
 		});
 		const json = await res.json();
-		result = JSON.stringify(json);
+		result = JSON.stringify(json.json);
 		if (result) {
-			console.log(result);
+			console.log(`\n---------------\n Recieved api answer: ${result} \n---------------\n`);
 			$complitedSteps = 4;
 			$currentStep += 1;
 		}
@@ -76,7 +81,11 @@
 			<div class="relative flex flex-row justify-between gap-4 items-baseline">
 				<div class="flex flex-col font-bold text-xl text-marine-blue">
 					{paymentPlans[$paymentPlan].name} ({$billingTermMonthly ? 'Monthly' : 'Yearly'})
-					<span class="text-cool-gray text-base font-normal underline">Change</span>
+					<button
+						type="button"
+						on:click|preventDefault={() => ($currentStep = 1)}
+						class="text-cool-gray text-base font-normal underline text-left">Change</button
+					>
 				</div>
 				<div class="align-bottom self-end font-bold text-xl text-marine-blue">
 					${$billingTermMonthly

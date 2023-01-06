@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
 	import { complitedSteps, currentStep } from '$lib/multiform-store';
-	export let steps;
+	import type { SvelteComponent } from 'svelte';
+	export let steps: SvelteComponent[];
 </script>
 
 <article class="relative xl:rounded-xl w-full h-full bg-transparent grid items-center">
@@ -15,7 +16,6 @@
 					<button
 						type="button"
 						on:click|preventDefault={() => {
-							console.log(id < $complitedSteps + 1);
 							if (id < $complitedSteps + 1) {
 								$currentStep = id;
 							}

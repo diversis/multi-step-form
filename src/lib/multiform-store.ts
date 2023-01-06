@@ -18,7 +18,6 @@ export const inputEmail: Writable<string> = writable('');
 export const inputPhone: Writable<number | null> = writable(0);
 
 export const initStorage = () => {
-	currentStep.set(0);
 	clientName.set('');
 	clientEmail.set('');
 	clientPhone.set(null);

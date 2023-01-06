@@ -12,7 +12,7 @@
 		complitedSteps
 	} from '$lib/multiform-store';
 	import { validateUserName, validateEmail, validatePhoneNumber } from '$lib/scripts/validators';
-	import { draw, fade } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 	import { tick } from 'svelte';
 	import CheckMark from './checkMark.svelte';
 
@@ -50,12 +50,12 @@
 		}
 	});
 
-	function handleInputName(e) {
+	function handleInputName() {
 		if (validateUserName($inputName.trim())) {
 			clientName.set($inputName.trim());
 			fields[0].error = ``;
 			nameValid = true;
-			e.target.placeholder = '';
+			// e.target.placeholder = '';
 		} else {
 			clientName.set('');
 			fields[0].error = `Please, provide valid name (3-29 symbols, '-', '_' and whitespace allowed)`;
@@ -64,13 +64,16 @@
 		}
 	}
 
-	function handleInputEmail(e) {
-		console.log('target: ', e.target);
+	function handleInputEmail() {
 		if (validateEmail($inputEmail.trim())) {
 			clientEmail.set($inputEmail.trim());
 			fields[1].error = ``;
 			emailValid = true;
-			e.target.placeholder = '';
+			// try {
+			// 	e.target.placeholder = '';
+			// } catch (err) {
+			// 	console.log('target has no placeholder');
+			// }
 		} else {
 			clientEmail.set('');
 			fields[1].error = `Please, provide valid email`;
@@ -93,9 +96,6 @@
 	}
 
 	async function handleSubmit() {
-		console.log(
-			`submit??? \n---------------\n name: ${$inputName.trim()} \n---------------\n email: ${$inputEmail.trim()} \n---------------\n phone: ${$inputPhone.trim()} `
-		);
 		await tick();
 		if ($canContinue) {
 			$complitedSteps = 1;
@@ -112,11 +112,18 @@
 	<form
 		id="multi"
 		on:submit|preventDefault={handleSubmit}
-		class="flex flex-col pt-6 xl:pt-12 text-md xl:text-lg gap-2 xl:gap-4"
+		class="flex flex-col pt-6 xl:pt-12 text-md xl:text-lg gap-6 xl:gap-10"
 	>
 		<!-- Name -->
 		<label class="flex flex-col gap-0 relative"
-			><span class=" text-marine-blue pb-2">{fields[0].name}</span>
+			><span class="flex flex-row justify-between text-marine-blue pb-2"
+				>{fields[0].name}
+				<h5
+					class="text-strawberry-red font-thin text-xs h-[1.8rem] xl:text-sm xl:h-[1.2rem]  place-self-end"
+				>
+					{fields[0].error}
+				</h5></span
+			>
 			<input
 				autocomplete="name"
 				placeholder={fields[0].placeholder}
@@ -124,6 +131,8 @@
 				required
 				bind:value={$inputName}
 				on:input={handleInputName}
+				on:invalid={handleInputName}
+				on:error={handleInputName}
 				class="{nameValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'}
@@ -133,13 +142,15 @@
 					class="absolute h-12 aspect-square right-0 top-7 xl:top-9
 			stroke-green-600 inline-block"><CheckMark /></b
 				>{/if}
-			<h5 class="text-strawberry-red font-thin text-xs h-[1.8rem] xl:text-sm xl:h-[1.2rem]">
-				{fields[0].error}
-			</h5>
 		</label>
 		<!-- Email -->
 		<label class="relative flex flex-col gap-0"
-			><span class=" text-marine-blue pb-2">{fields[1].name}</span>
+			><span class="flex flex-row justify-between text-marine-blue pb-2"
+				>{fields[1].name}
+				<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+					{fields[1].error}
+				</h5></span
+			>
 			<input
 				autocomplete="email"
 				placeholder={fields[1].placeholder}
@@ -147,6 +158,8 @@
 				required
 				bind:value={$inputEmail}
 				on:input={handleInputEmail}
+				on:invalid={handleInputEmail}
+				on:error={handleInputEmail}
 				class="{emailValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'} rounded-md border-cool-gray border px-4 py-2"
@@ -157,11 +170,15 @@
 			stroke-green-600 inline-block"><CheckMark /></b
 				>
 			{/if}
-			<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem]">{fields[1].error}</h5>
 		</label>
 		<!-- Phone -->
 		<label class="relative flex flex-col gap-0"
-			><span class=" text-marine-blue pb-2">{fields[2].name}</span>
+			><span class="flex flex-row justify-between text-marine-blue pb-2"
+				>{fields[2].name}
+				<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+					{fields[2].error}
+				</h5></span
+			>
 			<input
 				autocomplete="tel"
 				placeholder={fields[2].placeholder}
@@ -170,6 +187,8 @@
 				required
 				bind:value={$inputPhone}
 				on:input={handleInputPhone}
+				on:invalid={handleInputPhone}
+				on:error={handleInputPhone}
 				class="{phoneValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'}
@@ -180,7 +199,6 @@
 					class="absolute h-12 aspect-square right-0 top-7 xl:top-9
 				stroke-green-600 inline-block"><CheckMark /></b
 				>{/if}
-			<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem]">{fields[2].error}</h5>
 		</label>
 	</form>
 </article>

@@ -69,7 +69,7 @@
 							</h5>
 						</div>
 					</div>
-					<h4 class="text-cool-gray ">
+					<h4 class="text-purplish-blue ">
 						+${$billingTermMonthly ? `${addon.price.monthly}/mo` : `${addon.price.yearly}/yr`}
 					</h4></label
 				>{/each}
