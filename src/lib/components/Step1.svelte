@@ -86,7 +86,7 @@
 			phoneValid = true;
 		} else {
 			clientPhone.set(null);
-			fields[1].error = `Please, provide valid phone number (only numbers)`;
+			fields[2].error = `Please, provide valid phone number (only numbers)`;
 			phoneValid = false;
 			$canContinue = false;
 		}

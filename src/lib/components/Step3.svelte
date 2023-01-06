@@ -16,7 +16,7 @@
 	});
 
 	function handleSubmit() {
-		$complitedSteps = 2;
+		$complitedSteps = 3;
 		$currentStep += 1;
 	}
 </script>
@@ -36,7 +36,7 @@
 					type="checkbox"
 					bind:group={$selectedAddons}
 					name="addon:  {addon.name}"
-					value={addon.name}
+					value={id}
 					class="hidden"
 				/>
 				<label
@@ -44,18 +44,18 @@
 					id="plan-{id}-label"
 					title="choose {addon.name}"
 					class=" relative rounded-md w-full flex flex-row items-center
-					 border-2 border-solid {$selectedAddons.includes(addon.name)
+					 border-2 border-solid {$selectedAddons.includes(id)
 						? 'border-marine-blue'
 						: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 px-4 gap-4"
 				>
 					<div
 						class="relative w-8 aspect-square appearance-none inline-block
-						{$selectedAddons.includes(addon.name)
+						{$selectedAddons.includes(id)
 							? 'bg-purplish-blue border-purplish-blue'
 							: 'border-cool-gray border-opacity-60 bg-transparent'}
 					  border-2 border-solid color-white rounded-md stroke-alabaster stroke-[80] transition-colors duration-300"
 					>
-						{#if $selectedAddons.includes(addon.name)}<CheckMark /> {/if}
+						{#if $selectedAddons.includes(id)}<CheckMark /> {/if}
 					</div>
 					<div
 						class=" py-2 xl:py-4 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"

@@ -22,7 +22,7 @@
 	function handleConfirmForm() {}
 
 	onMount(() => {
-		if ($currentStep > $complitedSteps) {
+		if ($currentStep !== 5 && $currentStep > $complitedSteps) {
 			currentStep.set($complitedSteps);
 		}
 	});

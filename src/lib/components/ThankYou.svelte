@@ -1,6 +1,12 @@
 <script>
+	import { initStorage } from '$lib/multiform-store';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import CheckMark from './checkMark.svelte';
+
+	onMount(() => {
+		initStorage();
+	});
 </script>
 
 <article in:fade={{ delay: 0, duration: 250 }} class="grid items-center w-full h-full">

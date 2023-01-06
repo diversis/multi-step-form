@@ -15,6 +15,7 @@
 					<button
 						type="button"
 						on:click|preventDefault={() => {
+							console.log(id < $complitedSteps + 1);
 							if (id < $complitedSteps + 1) {
 								$currentStep = id;
 							}
