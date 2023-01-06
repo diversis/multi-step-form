@@ -15,7 +15,7 @@
 			class="w-20 h-20 bg-strawberry-red border-1 bg-opacity-60 border-strawberry-red rounded-full mx-auto mb-10 grid items-center"
 		>
 			<div
-				class="w-10 h-10 bg-magnolia mx-auto rounded-full grid items-center stroke-strawberry-red stroke-[60]"
+				class="w-10 h-10 bg-magnolia mx-auto rounded-full grid items-center stroke-strawberry-red stroke-[60] "
 			>
 				<CheckMark />
 			</div>

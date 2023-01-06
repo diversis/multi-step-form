@@ -38,16 +38,7 @@ module.exports = {
 				alabaster: 'hsl(231, 100%, 99%)',
 				white: 'hsl(0, 0%, 100%)'
 			},
-			boxShadow: {
-				'img-light': '0 0 7px 5px hsla(200, 15%, 8%, 0.362)',
-				'img-dark': '0 0 7px 5px hsla(0, 0%, 100%, 0.362)',
-				'card-light': '0 0 5px 5px hsla(200, 15%, 8%, 0.362)',
-				'card-dark': '0 0 5px 5px hsla(0, 0%, 100%, 0.362)',
-				around: '0 0 5px 2px hsla(0, 0%, 0%,  0)',
-				'around-lg': '0 0 15px 9px hsla(0, 0%, 0%,  0)'
-			},
 			transitionTimingFunction: {
-				theme: 'cubic-bezier(0.005, 0.05, 0.95, 0.005)',
 				button: 'cubic-bezier(0.23, 0.13, 0.42, 0.23)'
 			},
 			fontSize: {
