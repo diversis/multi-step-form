@@ -113,14 +113,14 @@
 	>
 		<!-- Name -->
 		<label class="flex flex-col gap-0 relative"
-			><p class="flex flex-row justify-between text-marine-blue pb-2">
+			><span class="flex flex-row justify-between text-marine-blue pb-2">
 				{fields[0].name}
-				<span
+				<err
 					class="text-strawberry-red font-thin text-xs h-[1.8rem] xl:text-sm xl:h-[1.2rem]  place-self-end"
 				>
 					{fields[0].error}
-				</span>
-			</p>
+				</err>
+			</span>
 			<input
 				autocomplete="name"
 				placeholder={fields[0].placeholder}
@@ -142,12 +142,12 @@
 		</label>
 		<!-- Email -->
 		<label class="relative flex flex-col gap-0"
-			><p class="flex flex-row justify-between text-marine-blue pb-2">
+			><span class="flex flex-row justify-between text-marine-blue pb-2">
 				{fields[1].name}
-				<span class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+				<err class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
 					{fields[1].error}
-				</span>
-			</p>
+				</err>
+			</span>
 			<input
 				autocomplete="email"
 				placeholder={fields[1].placeholder}
@@ -171,12 +171,12 @@
 		</label>
 		<!-- Phone -->
 		<label class="relative flex flex-col gap-0"
-			><p class="flex flex-row justify-between text-marine-blue pb-2">
+			><span class="flex flex-row justify-between text-marine-blue pb-2">
 				{fields[2].name}
-				<span class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+				<err class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
 					{fields[2].error}
-				</span>
-			</p>
+				</err>
+			</span>
 			<input
 				autocomplete="tel"
 				placeholder={fields[2].placeholder}
