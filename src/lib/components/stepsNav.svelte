@@ -33,7 +33,7 @@
                     active:scale-95 transition-colors duration-300 ease-button
                     ">{id + 1}</button
 					>
-					<span class="xl:flex xl:flex-col  font-extralight text-cool-gray  w-[14ch] hidden"
+					<span class="xl:flex xl:flex-col  font-normal text-light-gray  w-[14ch] hidden"
 						>Step {id + 1}<b class="font-bold text-magnolia tracking-wider">{step.name}</b></span
 					>
 				</li>

@@ -3,6 +3,7 @@
 </script>
 
 <svg id="check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="mx-auto">
+	<title>Check Mark</title>
 	<g>
 		<path
 			in:draw={{ duration: 700 }}

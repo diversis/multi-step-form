@@ -1,38 +1,115 @@
-# create-svelte
+# Frontend Mentor - Multi-step form solution
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Creating a project
+## Table of contents
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Frontend Mentor - Multi-step form solution](#frontend-mentor---multi-step-form-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
-## Developing
+## Overview
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### The challenge
 
-```bash
-npm run dev
+Users should be able to:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- Complete each step of the sequence
+- See a summary of their selections on the final step and confirm their order
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-## Building
+### Screenshot
+Desktop:
+<details><summary>1</summary> 
 
-To create a production version of your app:
+![desktop step 1](./static/screenshots/1-1.png) 
+</details>
+<details><summary>2</summary>
 
-```bash
-npm run build
-```
+![desktop step 2](./static/screenshots/1-2.png) 
+</details>
+<details><summary>3</summary>
 
-You can preview the production build with `npm run preview`.
+![desktop step 3](./static/screenshots/1-3.png) 
+</details>
+<details><summary>4</summary>
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+![desktop step 4](./static/screenshots/1-4.png) 
+</details>
+<details><summary>5</summary>
+
+![desktop step 5](./static/screenshots/1-5.png) 
+</details>
+
+Mobile:
+<details><summary>1</summary>
+
+![mobile step 1](./static/screenshots/2-1.png) 
+</details>
+<details><summary>2</summary>
+
+![mobile step 2](./static/screenshots/2-2.png) 
+</details>
+<details><summary>3</summary>
+
+![mobile step 3](./static/screenshots/2-3.png) 
+</details>
+<details><summary>4</summary>
+
+![mobile step 4](./static/screenshots/2-4.png) 
+</details>
+<details><summary>5</summary>
+
+![mobile step 5](./static/screenshots/2-5.png) 
+</details>
+
+
+### Links
+
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+
+## My process
+
+### Built with
+
+
+- Mobile-first workflow
+- [Svelte](https://svelte.dev/) - JS Framework
+- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
+- [Vite](https://vitejs.dev/) - Frontend Tooling
+
+
+### What I learned
+
+
+
+### Continued development
+
+
+### Useful resources
+
+
+
+## Author
+
+- Frontend Mentor - [diversis](https://www.frontendmentor.io/profile/diversis)
+
+
+
+## Acknowledgments
+
+
