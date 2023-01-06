@@ -31,11 +31,7 @@
 		{#if $currentStep === 3}
 			<button
 				type="submit"
-				on:click|preventDefault={() => {
-					if ($canContinue) {
-						dispatch('confirm-form');
-					}
-				}}
+				form="multi-complete"
 				class="rounded-lg bg-purplish-blue w-[14ch] py-3 text-alabaster font-bold
          hover:text-magnolia focus:text-magnolia hover:bg-opacity-60 focus:bg-opacity-60"
 				>Confirm</button

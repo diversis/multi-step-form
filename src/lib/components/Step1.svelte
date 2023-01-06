@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
 	import {
-		userName,
-		userPhone,
-		userEmail,
+		clientName,
+		clientPhone,
+		clientEmail,
 		canContinue,
 		inputEmail,
 		inputPhone,
@@ -33,9 +33,9 @@
 	const nameRegExp = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.\s{1}]{0,29}$/i;
 
 	onMount(() => {
-		$inputName = $userName;
-		$inputEmail = $userEmail;
-		$inputPhone = $userPhone;
+		$inputName = $clientName;
+		$inputEmail = $clientEmail;
+		$inputPhone = $clientPhone;
 		nameValid = validateUserName($inputName);
 		emailValid = validateEmail($inputEmail);
 		phoneValid = validatePhoneNumber($inputPhone);
@@ -52,12 +52,12 @@
 
 	function handleInputName(e) {
 		if (validateUserName($inputName.trim())) {
-			userName.set($inputName.trim());
+			clientName.set($inputName.trim());
 			fields[0].error = ``;
 			nameValid = true;
 			e.target.placeholder = '';
 		} else {
-			userName.set('');
+			clientName.set('');
 			fields[0].error = `Please, provide valid name (3-29 symbols, '-', '_' and whitespace allowed)`;
 			nameValid = false;
 			$canContinue = false;
@@ -67,12 +67,12 @@
 	function handleInputEmail(e) {
 		console.log('target: ', e.target);
 		if (validateEmail($inputEmail.trim())) {
-			userEmail.set($inputEmail.trim());
+			clientEmail.set($inputEmail.trim());
 			fields[1].error = ``;
 			emailValid = true;
 			e.target.placeholder = '';
 		} else {
-			userEmail.set('');
+			clientEmail.set('');
 			fields[1].error = `Please, provide valid email`;
 			emailValid = false;
 			$canContinue = false;
@@ -81,11 +81,11 @@
 
 	function handleInputPhone() {
 		if (validatePhoneNumber($inputPhone)) {
-			userPhone.set($inputPhone);
+			clientPhone.set($inputPhone);
 			fields[2].error = ``;
 			phoneValid = true;
 		} else {
-			userPhone.set(null);
+			clientPhone.set(null);
 			fields[1].error = `Please, provide valid phone number (only numbers)`;
 			phoneValid = false;
 			$canContinue = false;

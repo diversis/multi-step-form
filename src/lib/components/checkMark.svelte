@@ -9,8 +9,7 @@
 			fill="none"
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			stroke-width="32"
-			d="M464 128L240 384l-96-96M144 384l-96-96M368 128L232 284"
+			d="M416 128L192 384l-96-96"
 		/>
 	</g>
 </svg>

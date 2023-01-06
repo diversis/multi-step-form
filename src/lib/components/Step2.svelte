@@ -9,17 +9,8 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import Switch from './Switch.svelte';
+	import { paymentPlans } from '../scripts/paymentPlans';
 
-	const paymentPlansMonthly = [
-		{ name: 'Arcade', price: 9 },
-		{ name: 'Advanced', price: 12 },
-		{ name: 'Pro', price: 15 }
-	];
-	const paymentPlansYearly = [
-		{ name: 'Arcade', price: 90 },
-		{ name: 'Advanced', price: 120 },
-		{ name: 'Pro', price: 150 }
-	];
 	function handleSwitch(e: CustomEvent) {
 		$billingTermMonthly = e.detail;
 	}
@@ -44,86 +35,45 @@
 	</div>
 	<form id="multi" on:submit|preventDefault={handleSubmit}>
 		<div class="flex flex-col gap-y-6 xl:grid xl:grid-cols-3 xl:gap-x-8 ">
-			{#if $billingTermMonthly}
-				{#each paymentPlansMonthly as plan, id}
-					<label
-						id="plan-{id}"
-						title="choose {plan.name} plan"
-						class="relative rounded-md w-full xl:h-60
-					 border-2 border-solid {$paymentPlan === id
-							? 'border-marine-blue'
-							: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
-					>
-						<input
-							type="radio"
-							bind:group={$paymentPlan}
-							name="payment plan"
-							value={id}
-							class="absolute w-0 h-0 border-none bg-transparent opacity-0"
-						/>
-						<div
-							class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
-						>
-							<div
-								class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
-							{id === 0 ? 'bg-amber-400' : id === 1 ? 'bg-strawberry-red bg-opacity-70' : 'bg-purplish-blue'}"
-							>
-								<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
-									><use href="#{plan.name.toLowerCase()}" /></svg
-								>
-							</div>
-							<div class="flex flex-col text-left">
-								<h3 class="font-bold text-xl text-marine-blue">
-									{plan.name}
-								</h3>
-								<h4 class="text-cool-gray">
-									${plan.price}/mo
-								</h4>
-							</div>
-						</div></label
-					>
-				{/each}
-			{:else}
-				{#each paymentPlansYearly as plan, id}
-					<label
-						id="plan-{id}"
-						title="choose {plan.name} plan"
-						class="relative rounded-md w-full xl:h-60
+			{#each paymentPlans as plan, id}
+				<label
+					id="plan-{id}"
+					title="choose {plan.name} plan"
+					class="relative rounded-md w-full xl:h-60
 			 border-2 border-solid {$paymentPlan === id
-							? 'border-marine-blue'
-							: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
+						? 'border-marine-blue'
+						: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
+				>
+					<input
+						type="radio"
+						bind:group={$paymentPlan}
+						name="payment plan"
+						value={id}
+						class="absolute w-0 h-0"
+					/>
+					<div
+						class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
 					>
-						<input
-							type="radio"
-							bind:group={$paymentPlan}
-							name="payment plan"
-							value={id}
-							class="absolute w-0 h-0"
-						/>
 						<div
-							class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
-						>
-							<div
-								class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
+							class="overflow-hidden my-auto xl:my-0 grid items-center rounded-full w-12 xl:w-16 aspect-square
 					{id === 0 ? 'bg-amber-400' : id === 1 ? 'bg-strawberry-red bg-opacity-70' : 'bg-purplish-blue'}"
+						>
+							<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
+								><use href="#{plan.name.toLowerCase()}" /></svg
 							>
-								<svg class="h-full aspect-square p-2 xl:p-3 fill-white "
-									><use href="#{plan.name.toLowerCase()}" /></svg
-								>
-							</div>
-							<div class="flex flex-col text-left">
-								<h3 class="font-bold text-xl text-marine-blue">
-									{plan.name}
-								</h3>
-								<h4 class="text-cool-gray">
-									${plan.price}/mo
-								</h4>
-								<span class="text-marine-blue">2 month free</span>
-							</div>
-						</div></label
-					>
-				{/each}
-			{/if}
+						</div>
+						<div class="flex flex-col text-left">
+							<h3 class="font-bold text-xl text-marine-blue">
+								{plan.name}
+							</h3>
+							<h4 class="text-cool-gray">
+								${$billingTermMonthly ? `${plan.price.monthly}/mo` : `${plan.price.yearly}/yr`}
+							</h4>
+							{#if !$billingTermMonthly}<span class="text-marine-blue">2 month free</span>{/if}
+						</div>
+					</div></label
+				>
+			{/each}
 		</div>
 	</form>
 	<div class="mx-auto flex flex-row gap-x-8">

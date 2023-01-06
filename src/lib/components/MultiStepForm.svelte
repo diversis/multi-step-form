@@ -1,14 +1,5 @@
 <script lang="ts">
-	import {
-		currentStep,
-		billingTermMonthly,
-		userName,
-		userPhone,
-		userEmail,
-		paymentPlan,
-		addons,
-		canContinue
-	} from '$lib/multiform-store';
+	import { currentStep, canContinue, complitedSteps } from '$lib/multiform-store';
 	import FormNav from './formNav.svelte';
 	import Step1 from './Step1.svelte';
 	import Step2 from './Step2.svelte';
@@ -16,6 +7,7 @@
 	import Step4 from './Step4.svelte';
 	import ThankYou from './ThankYou.svelte';
 	import StepsNav from './stepsNav.svelte';
+	import { onMount } from 'svelte';
 
 	const steps = [
 		{ name: 'Your info', component: Step1 },
@@ -29,12 +21,11 @@
 
 	function handleConfirmForm() {}
 
-	function handleNextStep() {
-		if ($canContinue) {
-			$currentStep += 1;
+	onMount(() => {
+		if ($currentStep > $complitedSteps) {
+			currentStep.set($complitedSteps);
 		}
-		console.log('step: ', $currentStep);
-	}
+	});
 </script>
 
 <div
@@ -74,10 +65,7 @@
 		class="min-h-fit rounded-xl col-span-2 px-6 mx-auto w-bg-anim xl:w-4/5 pt-8 xl:pt-20 pb-12 flex flex-col justify-between h-full bg-white"
 	>
 		<svelte:component this={steps[$currentStep].component}
-			><FormNav
-				on:confirm-form={handleConfirmForm}
-				on:nextStep={handleNextStep}
-			/></svelte:component
+			><FormNav on:confirm-form={handleConfirmForm} /></svelte:component
 		>
 	</div>
 </div>
