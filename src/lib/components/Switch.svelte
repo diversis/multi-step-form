@@ -11,9 +11,15 @@
 </script>
 
 <label title="Change Billing Term" class="switch relative inline-block w-12 h-6">
-	<input on:change={handleCheck} type="checkbox" bind:checked class="w-0 h-0" />
+	<input
+		on:change={handleCheck}
+		type="checkbox"
+		bind:checked
+		class="w-full h-full opacity-0 focus:opacity-100 focus:outline-marine-blue"
+	/>
 	<span
-		class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-marine-blue transition-all rounded-3xl duration-500
+		class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0
+		 bg-marine-blue transition-all rounded-3xl duration-500
        "
 	/>
 </label>
