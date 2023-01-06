@@ -8,6 +8,7 @@
 	import ThankYou from './ThankYou.svelte';
 	import StepsNav from './stepsNav.svelte';
 	import { onMount } from 'svelte';
+	import type { SvelteComponent } from 'svelte/internal';
 
 	const steps = [
 		{ name: 'Your info', component: Step1 },
