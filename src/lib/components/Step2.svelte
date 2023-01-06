@@ -39,17 +39,17 @@
 				<label
 					id="plan-{id}"
 					title="choose {plan.name} plan"
-					class="relative rounded-md w-full xl:h-60
-			 border-2 border-solid {$paymentPlan === id
-						? 'border-marine-blue'
-						: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 "
+					class="overflow-hidden relative rounded-md w-full xl:h-60
+			 border border-solid {$paymentPlan === id
+						? 'border-purplish-blue xl:border-marine-blue'
+						: 'border-cool-gray border-opacity-60'} hover:border-purplish-blue xl:hover:border-marine-blue"
 				>
 					<input
 						type="radio"
 						bind:group={$paymentPlan}
 						name="payment plan"
 						value={id}
-						class="absolute w-0 h-0"
+						class="absolute bottom-0 w-full h-0 opacity-0 bg-transparent border-transparent outline-none focus:opacity-100 text-transparent"
 					/>
 					<div
 						class=" px-4 py-2 xl:py-6 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
@@ -76,7 +76,7 @@
 			{/each}
 		</div>
 	</form>
-	<div class="mx-auto flex flex-row gap-x-8">
+	<div class="mx-auto flex flex-row gap-x-8 w-min">
 		<span class={$billingTermMonthly ? 'text-marine-blue' : 'text-cool-gray'}>Monthly</span><Switch
 			checked={!$billingTermMonthly}
 			on:checked={handleSwitch}

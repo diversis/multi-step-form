@@ -5,7 +5,7 @@
 <svg id="check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="mx-auto">
 	<g>
 		<path
-			in:draw={{ duration: 1000 }}
+			in:draw={{ duration: 700 }}
 			fill="none"
 			stroke-linecap="round"
 			stroke-linejoin="round"

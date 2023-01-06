@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { currentStep, canContinue, complitedSteps } from '$lib/multiform-store';
+	import { currentStep, complitedSteps } from '$lib/multiform-store';
 	import FormNav from './formNav.svelte';
 	import Step1 from './Step1.svelte';
 	import Step2 from './Step2.svelte';
@@ -8,9 +8,9 @@
 	import ThankYou from './ThankYou.svelte';
 	import StepsNav from './stepsNav.svelte';
 	import { onMount } from 'svelte';
-	import type { SvelteComponent } from 'svelte/internal';
+	import type { Step } from '$lib/scripts/types';
 
-	const steps = [
+	const steps: Step[] = [
 		{ name: 'Your info', component: Step1 },
 		{ name: 'Select plan', component: Step2 },
 		{ name: 'Add-ons', component: Step3 },
@@ -18,7 +18,7 @@
 		{ name: 'Thank You', component: ThankYou }
 	];
 
-	let stepId = 0;
+	let stepId: number = 0;
 
 	function handleConfirmForm() {}
 
@@ -63,7 +63,7 @@
 	</div>
 	<div
 		id="col-2"
-		class="min-h-fit rounded-xl col-span-2 px-6 mx-auto w-bg-anim xl:w-4/5 pt-8 xl:pt-20 pb-12 flex flex-col justify-between h-full bg-white"
+		class="min-h-fit rounded-xl col-span-2 px-6 mx-auto w-bg-anim xl:w-4/5 pt-8 xl:pt-20 pb-6 xl:pb-12 flex flex-col justify-between h-full bg-white"
 	>
 		<svelte:component this={steps[$currentStep].component}
 			><FormNav on:confirm-form={handleConfirmForm} /></svelte:component

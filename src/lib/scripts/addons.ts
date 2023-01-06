@@ -1,4 +1,6 @@
-export const addons = [
+import type { Addon } from './types';
+
+export const addons: Addon[] = [
 	{
 		name: 'online service',
 		price: { monthly: 1, yearly: 10 },

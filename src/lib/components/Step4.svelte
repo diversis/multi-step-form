@@ -83,8 +83,10 @@
 					{paymentPlans[$paymentPlan].name} ({$billingTermMonthly ? 'Monthly' : 'Yearly'})
 					<button
 						type="button"
+						title="Change Payment Plan"
 						on:click|preventDefault={() => ($currentStep = 1)}
-						class="text-cool-gray text-base font-normal underline text-left">Change</button
+						class="text-cool-gray text-base font-normal underline text-left hover:text-purplish-blue focus:text-purplish-blue"
+						>Change</button
 					>
 				</div>
 				<div class="align-bottom self-end font-bold text-xl text-marine-blue">
@@ -99,7 +101,7 @@
 					<div class="text-cool-gray">
 						{addons[addon].name.charAt(0).toUpperCase() + addons[addon].name.slice(1)}
 					</div>
-					<div class="align-bottom self-end">
+					<div class="align-bottom self-end text-marine-blue">
 						+${$billingTermMonthly
 							? addons[addon].price.monthly + '/mo'
 							: addons[addon].price.yearly + '/yr'}
@@ -108,7 +110,7 @@
 			{/each}
 			<div class="inline-block" />
 			<div class="flex flex-row justify-between gap-4">
-				<div>Total (per {billingTermMonthly ? 'month' : 'year'})</div>
+				<div class="text-cool-gray">Total (per {billingTermMonthly ? 'month' : 'year'})</div>
 				<div class="align-bottom self-end text-purplish-blue font-bold text-2xl">
 					${sum()}{$billingTermMonthly ? '/mo' : '/yr'}
 				</div>

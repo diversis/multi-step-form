@@ -31,23 +31,22 @@
 	<form id="multi" on:submit|preventDefault={handleSubmit}>
 		<div class="flex flex-col gap-y-6">
 			{#each addons as addon, id}
-				<input
-					id="plan-{id}-input"
-					type="checkbox"
-					bind:group={$selectedAddons}
-					name="addon:  {addon.name}"
-					value={id}
-					class="hidden"
-				/>
 				<label
 					for="plan-{id}-input"
 					id="plan-{id}-label"
 					title="choose {addon.name}"
 					class=" relative rounded-md w-full flex flex-row items-center
-					 border-2 border-solid {$selectedAddons.includes(id)
-						? 'border-marine-blue'
-						: 'border-cool-gray'} hover:border-marine-blue border-opacity-60 px-4 gap-4"
-				>
+					 border border-solid {$selectedAddons.includes(id)
+						? 'border-purplish-blue xl:border-marine-blue'
+						: 'border-cool-gray border-opacity-60'} hover:border-purplish-blue xl:hover:border-marine-blue  px-4 gap-4"
+					><input
+						id="plan-{id}-input"
+						type="checkbox"
+						bind:group={$selectedAddons}
+						name="addon:  {addon.name}"
+						value={id}
+						class="absolute h-7 w-7 bg-transparent border-transparent opacity-0 focus:opacity-100 rounded-lg"
+					/>
 					<div
 						class="relative w-8 aspect-square appearance-none inline-block
 						{$selectedAddons.includes(id)
@@ -61,7 +60,7 @@
 						class=" py-2 xl:py-4 h-full w-full flex flex-row xl:flex-col xl:justify-between gap-x-6"
 					>
 						<div class="flex flex-col text-left">
-							<h3 class="font-bold text-xl text-marine-blue">
+							<h3 class="font-medium text-xl text-marine-blue">
 								{addon.name.charAt(0).toUpperCase() + addon.name.slice(1)}
 							</h3>
 							<h5 class="text-cool-gray">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, beforeUpdate, afterUpdate } from 'svelte';
+	import { onMount, afterUpdate } from 'svelte';
 	import {
 		clientName,
 		clientPhone,
@@ -15,8 +15,9 @@
 	import { fade } from 'svelte/transition';
 	import { tick } from 'svelte';
 	import CheckMark from './checkMark.svelte';
+	import type { Field } from '$lib/scripts/types';
 
-	const fields = [
+	const fields: Field[] = [
 		{ name: 'Name', placeholder: 'e.g. Stephen King', error: '' },
 		{ name: 'Email Address', placeholder: 'e.g. stephenking@lorem.com', error: '' },
 		{ name: 'Phone Number', placeholder: 'e.g. +1 234 567 890', error: '' }
@@ -26,11 +27,8 @@
 	let emailValid: boolean;
 	let phoneValid: boolean;
 
-	let hasError = false;
-	let isSuccessVisible = false;
-	let submitted = false;
-
-	const nameRegExp = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.\s{1}]{0,29}$/i;
+	const nameRegExp: RegExp = /^(?!.*\.\.)(?!.*\.$)[^\W][\w.\s{1}]{0,29}$/i;
+	const phoneRexExp: RegExp = /(\d?)(\d{0,3})(\d{0,3})(\d{0,3})(\d{0,3})/;
 
 	onMount(() => {
 		$inputName = $clientName;
@@ -38,7 +36,7 @@
 		$inputPhone = $clientPhone;
 		nameValid = validateUserName($inputName);
 		emailValid = validateEmail($inputEmail);
-		phoneValid = validatePhoneNumber($inputPhone);
+		phoneValid = validatePhoneNumber(+$inputPhone.replace(/\D/g, ''));
 	});
 
 	afterUpdate(() => {
@@ -55,7 +53,6 @@
 			clientName.set($inputName.trim());
 			fields[0].error = ``;
 			nameValid = true;
-			// e.target.placeholder = '';
 		} else {
 			clientName.set('');
 			fields[0].error = `Please, provide valid name (3-29 symbols, '-', '_' and whitespace allowed)`;
@@ -69,11 +66,6 @@
 			clientEmail.set($inputEmail.trim());
 			fields[1].error = ``;
 			emailValid = true;
-			// try {
-			// 	e.target.placeholder = '';
-			// } catch (err) {
-			// 	console.log('target has no placeholder');
-			// }
 		} else {
 			clientEmail.set('');
 			fields[1].error = `Please, provide valid email`;
@@ -83,13 +75,18 @@
 	}
 
 	function handleInputPhone() {
-		if (validatePhoneNumber($inputPhone)) {
+		let mask = $inputPhone.replace(/\D/g, '').match(phoneRexExp);
+		$inputPhone =
+			mask && mask[1]
+				? '+' + mask[1] + ' (' + mask[2] + ') ' + mask[3] + '-' + mask[4] + '-' + mask[5]
+				: '';
+		if (validatePhoneNumber(+$inputPhone.replace(/\D/g, ''))) {
 			clientPhone.set($inputPhone);
 			fields[2].error = ``;
 			phoneValid = true;
 		} else {
-			clientPhone.set(null);
-			fields[2].error = `Please, provide valid phone number (only numbers)`;
+			clientPhone.set('');
+			fields[2].error = `Please, provide valid phone number`;
 			phoneValid = false;
 			$canContinue = false;
 		}
@@ -136,7 +133,7 @@
 				class="{nameValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'}
-				rounded-md border  px-4 py-2"
+				rounded-md border  px-4 py-2 font-medium"
 			/>
 			{#if nameValid}<b
 					class="absolute h-12 aspect-square right-0 top-7 xl:top-9
@@ -161,8 +158,9 @@
 				on:invalid={handleInputEmail}
 				on:error={handleInputEmail}
 				class="{emailValid
-					? 'border-cool-gray border-opacity-60'
-					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'} rounded-md border-cool-gray border px-4 py-2"
+					? 'border-cool-gray border-opacity-60 focus:border-opacity-100 focus-within:border-opacity-100 focus-visible:border-opacity-100 focus:outline-purplish-blue xl:focus:outline-marine-blue focus-visible:outline-purplish-blue focus-within:outline-purplish-blue xl:focus-visible:outline-marine-blue xl:focus-within:outline-marine-blue'
+					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'} 
+					rounded-md border-cool-gray border px-4 py-2 font-medium "
 			/>
 			{#if emailValid}
 				<b
@@ -183,7 +181,6 @@
 				autocomplete="tel"
 				placeholder={fields[2].placeholder}
 				type="tel"
-				pattern="\d&lcub;6,15&rcub;"
 				required
 				bind:value={$inputPhone}
 				on:input={handleInputPhone}
@@ -192,7 +189,7 @@
 				class="{phoneValid
 					? 'border-cool-gray border-opacity-60'
 					: 'border-strawberry-red focus:outline-strawberry-red focus-visible:outline-strawberry-red focus-within:outline-strawberry-red'}
-					rounded-md  border  px-4 py-2"
+					rounded-md  border  px-4 py-2 font-medium"
 			/>
 			{#if phoneValid}
 				<b
