@@ -115,11 +115,11 @@
 		<label class="flex flex-col gap-0 relative"
 			><span class="flex flex-row justify-between text-marine-blue pb-2">
 				{fields[0].name}
-				<err
+				<i
 					class="text-strawberry-red font-thin text-xs h-[1.8rem] xl:text-sm xl:h-[1.2rem]  place-self-end"
 				>
 					{fields[0].error}
-				</err>
+				</i>
 			</span>
 			<input
 				autocomplete="name"
@@ -144,9 +144,9 @@
 		<label class="relative flex flex-col gap-0"
 			><span class="flex flex-row justify-between text-marine-blue pb-2">
 				{fields[1].name}
-				<err class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+				<i class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
 					{fields[1].error}
-				</err>
+				</i>
 			</span>
 			<input
 				autocomplete="email"
@@ -173,9 +173,9 @@
 		<label class="relative flex flex-col gap-0"
 			><span class="flex flex-row justify-between text-marine-blue pb-2">
 				{fields[2].name}
-				<err class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+				<i class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
 					{fields[2].error}
-				</err>
+				</i>
 			</span>
 			<input
 				autocomplete="tel"
