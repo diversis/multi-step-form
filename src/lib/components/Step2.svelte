@@ -26,10 +26,10 @@
 
 <article in:fade={{ delay: 0, duration: 250 }} class="flex flex-col gap-y-12">
 	<div>
-		<h1 id="Step-1 Title" class="text-marine-blue font-bold text-2xl xl:text-4xl">
+		<h1 id="Step-1-Title" class="text-marine-blue font-bold text-2xl xl:text-4xl">
 			Select your plan
 		</h1>
-		<h2 id="Step-1 Description" class="text-cool-gray text-lg xl:text-xl">
+		<h2 id="Step-1-Description" class="text-cool-gray text-lg xl:text-xl">
 			You have the option of monthly or yearly billing.
 		</h2>
 	</div>

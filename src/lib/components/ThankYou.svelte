@@ -20,12 +20,12 @@
 				<CheckMark />
 			</div>
 		</div>
-		<h1 id="Step-1 Title" class="text-marine-blue font-bold text-2xl xl:text-4xl text-center">
+		<h1 id="Step-5-Title" class="text-marine-blue font-bold text-2xl xl:text-4xl text-center">
 			Thank you!
 		</h1>
 
 		<h2
-			id="Step-1 Description"
+			id="Step-5-Description"
 			class="text-cool-gray text-lg xl:text-xl text-center max-w-[40ch] mx-auto"
 		>
 			Thanks for confirming your subscription! We hope you have fun using our platform. If you ever

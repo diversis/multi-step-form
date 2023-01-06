@@ -102,8 +102,8 @@
 </script>
 
 <article in:fade={{ delay: 0, duration: 250 }} class="flex flex-col ">
-	<h1 id="Step-1 Title" class="text-marine-blue font-bold text-2xl xl:text-4xl">Personal info</h1>
-	<h2 id="Step-1 Description" class="text-cool-gray text-lg xl:text-xl">
+	<h1 id="Step-1-Title" class="text-marine-blue font-bold text-2xl xl:text-4xl">Personal info</h1>
+	<h2 id="Step-1-Description" class="text-cool-gray text-lg xl:text-xl">
 		Please provide your name, email address, and phone number.
 	</h2>
 	<form
@@ -113,14 +113,14 @@
 	>
 		<!-- Name -->
 		<label class="flex flex-col gap-0 relative"
-			><span class="flex flex-row justify-between text-marine-blue pb-2"
-				>{fields[0].name}
-				<h5
+			><h6 class="flex flex-row justify-between text-marine-blue pb-2">
+				{fields[0].name}
+				<p
 					class="text-strawberry-red font-thin text-xs h-[1.8rem] xl:text-sm xl:h-[1.2rem]  place-self-end"
 				>
 					{fields[0].error}
-				</h5></span
-			>
+				</p>
+			</h6>
 			<input
 				autocomplete="name"
 				placeholder={fields[0].placeholder}
@@ -142,12 +142,12 @@
 		</label>
 		<!-- Email -->
 		<label class="relative flex flex-col gap-0"
-			><span class="flex flex-row justify-between text-marine-blue pb-2"
-				>{fields[1].name}
-				<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+			><h6 class="flex flex-row justify-between text-marine-blue pb-2">
+				{fields[1].name}
+				<p class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
 					{fields[1].error}
-				</h5></span
-			>
+				</p>
+			</h6>
 			<input
 				autocomplete="email"
 				placeholder={fields[1].placeholder}
@@ -171,12 +171,12 @@
 		</label>
 		<!-- Phone -->
 		<label class="relative flex flex-col gap-0"
-			><span class="flex flex-row justify-between text-marine-blue pb-2"
-				>{fields[2].name}
-				<h5 class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
+			><h6 class="flex flex-row justify-between text-marine-blue pb-2">
+				{fields[2].name}
+				<p class="text-strawberry-red font-thin text-sm h-[1.2rem] place-self-end">
 					{fields[2].error}
-				</h5></span
-			>
+				</p>
+			</h6>
 			<input
 				autocomplete="tel"
 				placeholder={fields[2].placeholder}
